@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>history clear</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div class="brand">
+        <img class="brand-mark" src="icons/icon32.png" alt="">
+        <div>
+          <h1>history clear</h1>
+          <p>Find and remove sensitive history fast.</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="search-panel" aria-label="Search options">
+      <label class="search-label" for="queryInput">Search history</label>
+      <div class="search-row">
+        <input id="queryInput" type="search" autocomplete="off"
+          placeholder="Search a domain, URL, or title" maxlength="200">
+        <button id="searchButton" class="primary">Search</button>
+      </div>
+      <div class="options-row">
+        <label><input id="includeTitle" type="checkbox" checked> Page titles</label>
+        <label><input id="includeUrl" type="checkbox" checked> URLs</label>
+        <label class="limit-control" for="limitSelect">Show
+          <select id="limitSelect">
+            <option value="100">100</option>
+            <option value="500" selected>500</option>
+            <option value="1000">1,000</option>
+            <option value="5000">5,000</option>
+          </select>
+        </label>
+      </div>
+      <div class="quick-row">
+        <button id="clearQueryButton" class="link-button">Clear search</button>
+        <button id="clearAllHistoryButton" class="link-button danger-link">Clear all history</button>
+      </div>
+    </section>
+
+    <section class="results-panel" aria-label="Search results">
+      <div class="results-toolbar">
+        <label class="select-all"><input id="selectAll" type="checkbox"> <span>Select all</span></label>
+        <span id="resultSummary" class="summary">Search to see matching history</span>
+        <button id="deleteSelectedButton" class="danger" disabled>Delete selected</button>
+      </div>
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+      <div id="results" class="results" role="list"></div>
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">⌕</div>
+        <p>Nothing to show yet</p>
+        <small>Search matches in saved URLs and page titles.</small>
+      </div>
+    </section>
+
+    <footer class="footer">Local only · Your history never leaves this browser.</footer>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

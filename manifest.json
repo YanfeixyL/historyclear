@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "history clear",
+  "version": "1.0.0",
+  "description": "Search and clear selected browser history in one click.",
+  "permissions": ["history"],
+  "action": {
+    "default_title": "history clear",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
